@@ -8,9 +8,8 @@
 
 html {
     color: #292929;
-    font-size: 14px;
-    line-height: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -22,6 +21,17 @@ html, body {
 
 body {
     background: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+#words {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0.5rem auto 0 auto;
 }
 
 section {
@@ -44,29 +54,25 @@ section > div {
     max-width: 1080px;
 }
 
-h1 {
+#logo {
     background: #f1c900;
     border-radius: 10%;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 20px auto;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 2rem auto;
     position: relative;
 }
 
-h1 em {
-    display: none;
-}
-
-h1:before,
-h1:after {
+#logo:before,
+#logo:after {
     content: " ";
     display: block;
     overflow: hidden;
     position: absolute;
 }
 
-h1:before {
+#logo:before {
     background: #fff;
     border-radius: 10%;
     top: 17%;
@@ -76,7 +82,7 @@ h1:before {
     z-index: 2;
 }
 
-h1:after {
+#logo:after {
     background: #292929;
     border-radius: 8%;
     top: 31.5%;
@@ -91,13 +97,8 @@ h1:after {
         width: 60%;
     }
 
-    h1 {
-        width: 88px;
-        height: 88px;
-    }
-
-    h2 {
-        font-size: 48px;
-        line-height: 58px;
+    #logo {
+        width: 8.8rem;
+        height: 8.8rem;
     }
 }
