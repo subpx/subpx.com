@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Subpixel Digital - Contact</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <section>
+            <div>
+                <form name="contact" method="POST" netlify-honeypot="bot-field" netlify>
+                    <p class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+                    <p>
+                        <label>Email: <input type="text" name="email" /></label>
+                    </p>
+                    <p>
+                        <label>Message: <textarea name="message"></textarea></label>
+                    </p>
+                    <p>
+                        <button type=”submit”>Send</button>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <script src="js/randomWords.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
