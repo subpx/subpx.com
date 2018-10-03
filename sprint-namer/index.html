@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <h1 id="sprintName" class="cover_name"></h1>
+
+            <div class="inner cover">
+                <div class="input-group input-group-lg">
+                    <input type="text" id="input" class="form-control" placeholder="Enter sprint identifier">
+                    <span class="input-group-btn">
+                        <button id="submitButton" class="btn btn-primary" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/chance.min.js"></script>
+
+<script>
+  var submitButton = document.getElementById('submitButton');
+  submitButton.addEventListener('click', generateName, false);
+
+  var input = document.getElementById('input');
+  input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      generateName();
+    }
+  }, false);
+
+  function generateName() {
+    var userInput = input.value;
+    var chance = new Chance(userInput);
+    var sprintName = chance.animal() + ' ' + chance.last();
+    document.getElementById('sprintName').innerHTML = sprintName;
+  }
+</script>
+</body>
+</html>

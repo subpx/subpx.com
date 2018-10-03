@@ -9,20 +9,22 @@
   function init() {
     var logo = document.getElementById('logo');
     var wordsLabel = document.getElementById('words');
+    var count = 0;
 
-    var toggleTheme = function() {
-      var randomColor = getRandomColor();
-      logo.style.background = randomColor;
-      wordsLabel.innerHTML = words(6).join(' ');
-    };
-
-    var getRandomColor = function() {
-      return '#' + Math.floor(Math.random() * 16777215).toString(16);
-    };
-
-    logo.addEventListener('click', function(e) {
-      toggleTheme();
+    logo.addEventListener('click', function() {
+      step();
     }, false);
+
+    step();
+
+    function step() {
+      logo.style.background = getRandomColor();
+      wordsLabel.innerHTML = words(6).join(' ');
+    }
+
+    function getRandomColor() {
+      return '#' + Math.floor(Math.random() * 16777215).toString(16);
+    }
 
     toggleTheme();
   }
