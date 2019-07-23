@@ -32,6 +32,7 @@
   submitButton.addEventListener('click', generateName, false);
 
   var input = document.getElementById('input');
+
   input.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -39,6 +40,13 @@
     }
   }, false);
 
+  const key = new URLSearchParams(document.location.search).get('key');
+
+  if(key) {
+    input.value = key;
+    generateName();
+  }
+  
   function generateName() {
     var userInput = input.value;
     var chance = new Chance(userInput);
