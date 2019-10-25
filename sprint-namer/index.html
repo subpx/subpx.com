@@ -36,7 +36,7 @@
   input.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
-      generateName();
+      onKeySubmit(input.value);
     }
   }, false);
 
@@ -46,9 +46,14 @@
     input.value = key;
     generateName();
   }
+
+  function onKeySubmit(keyValue) {
+    var searchParams = new URLSearchParams(window.location.search);
+    searchParams.set('key', keyValue);
+    window.location.search = searchParams.toString();
+  }
   
   function generateName() {
-    var userInput = input.value;
     var chance = new Chance(userInput);
     var sprintName = chance.animal() + ' ' + chance.last();
     document.getElementById('sprintName').innerHTML = sprintName;
